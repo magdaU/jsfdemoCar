@@ -57,7 +57,12 @@ public class PersonFormBean implements Serializable {
 		pm.deletePerson(personToDelete);
 		return null;
 	}
-
+	
+	public String showDetails()
+	{
+		return null;
+	}
+	
 	// Validators
 
 	// Business logic validation

@@ -1,6 +1,8 @@
 package com.example.jsfdemo.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Past;
@@ -9,6 +11,7 @@ import javax.validation.constraints.Size;
 
 public class Person {
 	
+	private int Id;
 	private String firstName = "unknown";
 	private String zipCode = "";
 	private String pin = "";
@@ -16,7 +19,18 @@ public class Person {
 	private double weight;
 	private boolean married;
 	private int numOfChildren;
+	private List<Car> cars = new ArrayList<Car>();
 	
+	
+	public int getId() {
+		return Id;
+	}
+	public void setId(int id) {
+		Id = id;
+	}
+	public List<Car> getCars() {
+		return cars;
+	}
 	@Size(min = 2, max = 20)
 	public String getFirstName() {
 		return firstName;

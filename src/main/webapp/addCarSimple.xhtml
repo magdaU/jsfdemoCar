@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	<ui:define name="content">
+		<h:form id="carform">
+			<h:panelGrid columns="2">
+
+				<h:outputText value="nazwa" />
+				<h:inputText id="name" value="#{carBean.car.name}" />
+
+				<h:outputText value="nr rejestracyjny" />
+				<h:inputText id="reg" value="#{carBean.car.registerNumber}" />
+			</h:panelGrid>
+			Właściciel:
+			
+			<h:selectOneMenu value="#{carBean.car.owner}">
+		    	<f:selectItems value = "#{personBean.allPersons}" var="person"
+		    	itemLabel="#{person.firstName} #{person.pin}" itemValue="#{person.firstName}"  />
+    		</h:selectOneMenu>
+    		
+			<h:commandButton value="#{msg.personFormOKButton}"
+				action="#{carBean.addCar}" />
+				
+			<h:panelGrid>
+				<h:messages showDetail="#{true}" showSummary="#{false}" />
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>

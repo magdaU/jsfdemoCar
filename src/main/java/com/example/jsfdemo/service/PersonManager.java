@@ -10,7 +10,18 @@ import com.example.jsfdemo.domain.Person;
 @ApplicationScoped
 public class PersonManager {
 	private List<Person> db = new ArrayList<Person>();
-
+	
+	
+	public Person get(int id)
+	{
+		for(Person p : db)
+		{
+			if(p.getId()==id)
+				return p;
+		}
+		return null;
+	}
+	
 	public void addPerson(Person person) {
 		Person newPerson = new Person();
 
