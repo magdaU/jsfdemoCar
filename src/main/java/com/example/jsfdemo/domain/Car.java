@@ -6,9 +6,14 @@ public class Car {
 	private String name;
 	private String registerNumber;
 	private Person owner;
+	private int ownerId;
 	
-	
-	
+	public int getOwnerId() {
+		return ownerId;
+	}
+	public void setOwnerId(int ownerId) {
+		this.ownerId = ownerId;
+	}
 	public Person getOwner() {
 		return owner;
 	}

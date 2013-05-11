@@ -11,7 +11,7 @@ import com.example.jsfdemo.domain.Person;
 public class PersonManager {
 	private List<Person> db = new ArrayList<Person>();
 	
-	
+	private static int nextId = 0;
 	public Person get(int id)
 	{
 		for(Person p : db)
@@ -24,7 +24,7 @@ public class PersonManager {
 	
 	public void addPerson(Person person) {
 		Person newPerson = new Person();
-
+		nextId++;
 		newPerson.setFirstName(person.getFirstName());
 		newPerson.setZipCode(person.getZipCode());
 		newPerson.setPin(person.getPin());
@@ -32,7 +32,7 @@ public class PersonManager {
 		newPerson.setMarried(person.isMarried());
 		newPerson.setWeight(person.getWeight());
 		newPerson.setNumOfChildren(person.getNumOfChildren());
-
+		newPerson.setId(nextId);
 		db.add(newPerson);
 	}
 

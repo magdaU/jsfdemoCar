@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 
 public class Person {
 	
-	private int Id;
+	private int id;
 	private String firstName = "unknown";
 	private String zipCode = "";
 	private String pin = "";
@@ -23,10 +23,10 @@ public class Person {
 	
 	
 	public int getId() {
-		return Id;
+		return id;
 	}
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 	public List<Car> getCars() {
 		return cars;

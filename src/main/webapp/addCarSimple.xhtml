@@ -16,9 +16,9 @@
 			</h:panelGrid>
 			Właściciel:
 			
-			<h:selectOneMenu value="#{carBean.car.owner}">
+			<h:selectOneMenu value="#{carBean.car.ownerId}">
 		    	<f:selectItems value = "#{personBean.allPersons}" var="person"
-		    	itemLabel="#{person.firstName} #{person.pin}" itemValue="#{person.firstName}"  />
+		    	itemLabel="#{person.firstName} #{person.pin}" itemValue="#{person.id}"  />
     		</h:selectOneMenu>
     		
 			<h:commandButton value="#{msg.personFormOKButton}"

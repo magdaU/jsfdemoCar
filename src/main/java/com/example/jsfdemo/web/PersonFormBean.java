@@ -48,6 +48,7 @@ public class PersonFormBean implements Serializable {
 	// Actions
 	public String addPerson() {
 		pm.addPerson(person);
+		person = new Person();
 		return "showPersons";
 		//return null;
 	}
@@ -60,7 +61,9 @@ public class PersonFormBean implements Serializable {
 	
 	public String showDetails()
 	{
-		return null;
+		Person p = persons.getRowData();
+		person = pm.get(p.getId());
+		return "personDetails";
 	}
 	
 	// Validators

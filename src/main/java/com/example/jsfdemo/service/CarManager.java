@@ -24,6 +24,8 @@ public class CarManager {
 	
 	public void AddCar(Car car)
 	{
+		car.setOwner(personManager.get(car.getOwnerId()));
+		
 		if(car.getOwner()==null)return;
 		Person p = personManager.get(car.getOwner().getId());
 		if(p!=null)
